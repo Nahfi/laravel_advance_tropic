@@ -56,8 +56,7 @@
              $mediaItems = $a->getMedia()
 
             @endphp
-            {{-- {{ $mediaItems  }} --}}
-            {{-- {{  $mediaItems}} --}}
+  }}
             <div class="card" style="width: 18rem;">
  
                 
