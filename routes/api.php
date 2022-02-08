@@ -14,6 +14,7 @@ use App\Http\Controllers\man;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('/mail',[man::class,'store'])->name('api_mail');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
