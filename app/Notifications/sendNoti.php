@@ -6,7 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-
+use Illuminate\Notifications\Messages\VonageMessage;
+use Illuminate\Notifications\Messages\NexmoMessage;
 class sendNoti extends Notification
 {
     use Queueable;
@@ -31,6 +32,23 @@ class sendNoti extends Notification
     {
         return ['mail'];
     }
+    /**
+ * Get the Vonage / SMS representation of the notification.
+ *
+ * @param  mixed  $notifiable
+ * @return \Illuminate\Notifications\Messages\NexmoMessage
+ */
+   
+
+
+ 
+/**
+ * Get the Vonage / SMS representation of the notification.
+ *
+ * @param  mixed  $notifiable
+ * @return \Illuminate\Notifications\Messages\VonageMessage
+ */
+
 
     /**
      * Get the mail representation of the notification.

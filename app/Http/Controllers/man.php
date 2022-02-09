@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\test;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\sendNoti;
+use Nexmo\Laravel\Facade\Nexmo;
  
 
 class man extends Controller
@@ -14,15 +15,16 @@ class man extends Controller
     //
     public function store(Request $r){
 
-        // $detail=[
 
-        //     'body'=>"hello i am simple test mail"
-        // ];
+     
+        Notification::route('mail',$r->email)->notify(new sendNoti());
+     
+        Nexmo::message()->send([
+            'to' => '8801616243666',
+            'from' => '01',
+            'text' => 'Sending SMS from Laravel. Woohoo!'
 
-        // Mail::to($r->email)->send(new test( $detail));
-
-        // Notification::send($r->email, new sendNoti());
-        Notification::route('mail', $r->email) ->notify( new sendNoti());
+        ]);
         return redirect()->back()->with('success', 'your message,here');   
     }
 }
